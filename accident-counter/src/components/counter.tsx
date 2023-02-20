@@ -1,7 +1,12 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
+
+const reducer = (count: number, newValue: number): number => {
+  return newValue;
+};
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  const [count, setCount] = useReducer(reducer, 0);
   const [draftCount, setDraftCount] = useState(0);
 
   return (
@@ -9,13 +14,11 @@ const Counter = () => {
       <h1>Days Since the Last Accident</h1>
       <p className="text-6xl">{count}</p>
       <div className="flex gap-2">
-        <button onClick={() => setCount((prevState) => prevState - 1)}>
-          ➖ Decrement
-        </button>
+        {/* <button onClick={() => setCount((prevState) => prevState - 1)}> */}
+        <button onClick={() => setCount(count - 1)}>➖ Decrement</button>
         <button onClick={() => setCount(0)}>🔁 Reset</button>
-        <button onClick={() => setCount((prevState) => prevState + 1)}>
-          ➕ Increment
-        </button>
+        {/* <button onClick={() => setCount((prevState) => prevState + 1)}> */}
+        <button onClick={() => setCount(count + 1)}>➕ Increment</button>
       </div>
       <div>
         <form
