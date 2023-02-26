@@ -7,12 +7,16 @@ export type UpdateHexColor = {
   };
 };
 
+export type RGBColor = [number, number, number];
+
 export type UpdateRGBColor = {
   type: 'update-rgb-color';
   payload: {
-    rgbColor: [number, number, number];
+    rgbColor: RGBColor;
   };
 };
+
+export type UpdateColorActions = UpdateHexColor | UpdateRGBColor;
 
 type ColorState = {
   hexColor: string;
@@ -33,7 +37,7 @@ export const colorReducer = (
 
   if (action.type === 'update-rgb-color') {
     const { rgbColor } = action.payload;
-    return { ...state, hexColor: rgb.hex(rgbColor) };
+    return { ...state, hexColor: '#' + rgb.hex(rgbColor) };
   }
 
   return state;
