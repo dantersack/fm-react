@@ -45,7 +45,7 @@ export type UpdateColorActions =
   | UpdateHSVColor
   | UpdateCMYKColor;
 
-type ColorState = {
+export type ColorState = {
   hexColor: string;
 };
 
