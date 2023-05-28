@@ -1,0 +1,13 @@
+{
+  "name": "01_singleton-pattern",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Share a single global instance throughout your application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
